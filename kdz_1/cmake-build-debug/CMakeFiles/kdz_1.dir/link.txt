@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/kdz_1.dir/main.cpp.o -o kdz_1 

@@ -1,5 +1,4 @@
 #include <string>
-#include <iostream>
 
 std::vector<size_t> naive_search(const std::string& text, const std::string& pattern) {
     std::vector<size_t> positions;

@@ -1,3 +1,0 @@
-/mnt/d/HSE/2 course/algosi/3 module/kdz/Control_Homework_2_code/cmake-build-debug/CMakeFiles/Control_Homework_2_code.dir
-/mnt/d/HSE/2 course/algosi/3 module/kdz/Control_Homework_2_code/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/d/HSE/2 course/algosi/3 module/kdz/Control_Homework_2_code/cmake-build-debug/CMakeFiles/rebuild_cache.dir

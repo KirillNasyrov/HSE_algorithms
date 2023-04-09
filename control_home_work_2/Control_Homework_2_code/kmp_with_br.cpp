@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 #include <vector>
 
@@ -15,10 +14,6 @@ std::vector<size_t> get_br(const std::string &pattern) {
         }
         br[i] = k;
     }
-    for (auto num: br) {
-        //std::cout << num << " ";
-    }
-    //std::cout << "\n";
     return br;
 }
 

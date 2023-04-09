@@ -1,6 +1,6 @@
-#include <iostream>
 #include <string>
 #include <vector>
+#include <iostream>
 
 std::vector<size_t> get_brs(const std::string& pattern) {
     size_t n = pattern.size();

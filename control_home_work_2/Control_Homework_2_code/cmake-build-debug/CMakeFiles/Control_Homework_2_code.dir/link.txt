@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/Control_Homework_2_code.dir/main.cpp.o -o Control_Homework_2_code 

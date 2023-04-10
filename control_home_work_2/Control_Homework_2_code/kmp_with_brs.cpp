@@ -21,7 +21,8 @@ std::vector<size_t> get_brs(const std::string& pattern) {
         if (pattern[br[i]] != pattern[i + 1]) {
             brs[i] = br[i];
         } else {
-            brs[i] = brs[br[i]];
+            size_t index = br[i] == 0 ? 0 : br[i] - 1;
+            brs[i] = brs[index];
         }
     }
     return brs;

@@ -47,10 +47,11 @@ std::vector<size_t> search_using_automat_kmp(const std::string &text, const std:
     return positions;
 }
 
-void search_using_automat_kmp_with_mask(const std::string &text, const std::vector<std::string> &q,
+size_t search_using_automat_kmp_with_mask(const std::string &text, const std::vector<std::string> &q,
                                    const std::vector<size_t> &l, size_t alphabet) {
     size_t n = text.size();
     size_t k = q.size();
+    size_t last;
 
     std::vector<size_t> c(n, 0);
 
@@ -66,7 +67,9 @@ void search_using_automat_kmp_with_mask(const std::string &text, const std::vect
 
     for (size_t i = 0; i < n; ++i) {
         if (c[i] == k) {
+            last = i;
             //std::cout << "Found pattern at index " << i << "\n";
         }
     }
+    return last;
 }

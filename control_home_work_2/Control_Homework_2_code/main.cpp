@@ -51,8 +51,6 @@ std::string generate_pattern(const std::string &text, size_t size_of_pattern, si
     std::uniform_real_distribution<double> dist(0, (double)size_of_pattern);
     std::uniform_real_distribution<double> dist_for_i(0, (double)(text.size() - size_of_pattern));
 
-
-
     auto i = (size_t)dist_for_i(mt);
     char mask[size_of_pattern + 1];
 
@@ -69,7 +67,7 @@ std::string generate_pattern(const std::string &text, size_t size_of_pattern, si
     return static_cast<std::string>(mask);
 }
 
-int64_t test(void (*func)(const std::string &, const std::vector<std::string> &, const std::vector<size_t> &),
+int64_t test(size_t (*func)(const std::string &, const std::vector<std::string> &, const std::vector<size_t> &),
              const std::string &text, const std::vector<std::string> &q, const std::vector<size_t> &l) {
 
     int64_t totalTime = 0;
@@ -101,7 +99,7 @@ int main() {
     std::ofstream fs1;
     fs1.open("fileOfTimes.csv", std::ios_base::app);
 
-    std::vector<void (*)(const std::string &, const std::vector<std::string> &, const std::vector<size_t> &)> functions(3);
+    std::vector<size_t (*)(const std::string &, const std::vector<std::string> &, const std::vector<size_t> &)> functions(3);
     functions[0] = naive_search_with_mask;
     functions[1] = kmp_search_using_br_with_mask;
     functions[2] = kmp_search_using_brs_with_mask;

@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <iostream>
 
 std::vector<size_t> get_br(const std::string &pattern) {
     size_t n = pattern.size();
@@ -37,10 +38,11 @@ std::vector<size_t> kmp_search_using_br(const std::string &text, const std::stri
     return positions;
 }
 
-void kmp_search_using_br_with_mask(const std::string &text, const std::vector<std::string> &q,
+size_t kmp_search_using_br_with_mask(const std::string &text, const std::vector<std::string> &q,
                                    const std::vector<size_t> &l) {
     size_t n = text.size();
     size_t k = q.size();
+    size_t last;
 
     std::vector<size_t> c(n, 0);
 
@@ -56,7 +58,9 @@ void kmp_search_using_br_with_mask(const std::string &text, const std::vector<st
 
     for (size_t i = 0; i < n; ++i) {
         if (c[i] == k) {
+            last = i;
             //std::cout << "Found pattern at index " << i << "\n";
         }
     }
+    return last;
 }

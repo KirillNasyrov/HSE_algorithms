@@ -20,10 +20,11 @@ std::vector<size_t> naive_search(const std::string& text, const std::string& pat
     return positions;
 }
 
-void naive_search_with_mask(const std::string &text, const std::vector<std::string> &q,
+size_t naive_search_with_mask(const std::string &text, const std::vector<std::string> &q,
                                    const std::vector<size_t> &l) {
     size_t n = text.size();
     size_t k = q.size();
+    size_t last;
 
     std::vector<size_t> c(n, 0);
 
@@ -39,7 +40,9 @@ void naive_search_with_mask(const std::string &text, const std::vector<std::stri
 
     for (size_t i = 0; i < n; ++i) {
         if (c[i] == k) {
+            last = i;
             //std::cout << "Found pattern at index " << i << "\n";
         }
     }
+    return last;
 }

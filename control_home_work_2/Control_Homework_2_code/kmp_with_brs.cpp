@@ -18,7 +18,7 @@ std::vector<size_t> get_brs(const std::string& pattern) {
 
     std::vector<size_t> brs = std::vector<size_t>(n);
     for (size_t i = 1; i < n; ++i) {
-        if (pattern[br[i]] != pattern[i + 1]) {
+        if (i == n - 1 || pattern[br[i]] != pattern[i + 1]) {
             brs[i] = br[i];
         } else {
             size_t index = br[i] == 0 ? 0 : br[i] - 1;
@@ -48,10 +48,11 @@ std::vector<size_t> kmp_search_using_brs(const std::string& text, const std::str
     return positions;
 }
 
-void kmp_search_using_brs_with_mask(const std::string &text, const std::vector<std::string> &q,
+size_t kmp_search_using_brs_with_mask(const std::string &text, const std::vector<std::string> &q,
                                    const std::vector<size_t> &l) {
     size_t n = text.size();
     size_t k = q.size();
+    size_t last;
 
     std::vector<size_t> c(n, 0);
 
@@ -67,7 +68,9 @@ void kmp_search_using_brs_with_mask(const std::string &text, const std::vector<s
 
     for (size_t i = 0; i < n; ++i) {
         if (c[i] == k) {
+            last = i;
             //std::cout << "Found pattern at index " << i << "\n";
         }
     }
+    return last;
 }

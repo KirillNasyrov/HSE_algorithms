@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/control_home_work_3.dir/main.cpp.o -o control_home_work_3 
